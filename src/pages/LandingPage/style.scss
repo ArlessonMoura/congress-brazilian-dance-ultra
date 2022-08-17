@@ -1,0 +1,17 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  background-image: radial-gradient(circle, #f5f0dc, #e2d4b1, #e9cb99, #e2b88c, #d6aa80, #a36b49);
+}
+
+section {
+  padding-top: 10%;
+  height: calc(100% - 8%);
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-margin-top: 8%;
+  border: 1px solid green;
+}

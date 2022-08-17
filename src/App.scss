@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: xilogravura;
+  src: url(./assets/fonts/woodcut.otf);
+  
+  font-family: antique;
+  src: url(./assets/fonts/CasablancaAntiqueItalic400.ttf);
+
+  font-family: armorial;
+  src: url(./assets/fonts/armorial.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: antique;
+  font-size: 1vw;
+}
