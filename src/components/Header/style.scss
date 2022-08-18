@@ -1,20 +1,19 @@
 header {
-  height: 10%;
+  height: 3rem;
   width: 100%;
   position: fixed;
   background-color: none;
-  // background-image: linear-gradient(to top, #e2b88c, #d6aa80, #a36b49);
+  border-bottom: 1px solid #a36b49;
 }
 
 nav {
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 a {
-  margin: 1rem;
   color: black;
   font-size: 2rem;
 }
