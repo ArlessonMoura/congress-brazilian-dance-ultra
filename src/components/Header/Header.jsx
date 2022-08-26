@@ -19,13 +19,13 @@ class Header extends Component {
     const { isModalOn } = this.state;
     return(
       <>
-        <header className="container-fluid">  
-          <nav>
-            <Button variant="Link" href="#section-one">Início</Button>
-            <Button variant="Link" href="#section-two">Nossa História</Button>
-            <Button variant="Link" href="#section-three">Forró do Ultra!</Button>
-            <Button variant="Link" href="#section-four">Inscrições</Button>
-            <Button variant="Link" onClick={ () => this.showModal(true) }>
+        <header className="d-flex justify-content-center">  
+          <nav className="col-8">
+            <Button variant="Link" size="lg" href="#section-one">Início</Button>
+            <Button variant="Link" size="lg" href="#section-two">Nossa História</Button>
+            <Button variant="Link" size="lg" href="#section-three">Forró do Ultra!</Button>
+            <Button variant="Link" size="lg" href="#section-four">Inscrições</Button>
+            <Button variant="Link" size="lg" onClick={ () => this.showModal(true) }>
               <i className="bi bi-person-circle"></i>     
             </Button>
           </nav>
