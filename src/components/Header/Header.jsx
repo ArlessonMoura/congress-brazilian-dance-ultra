@@ -20,7 +20,7 @@ class Header extends Component {
     return(
       <>
         <header className="d-flex justify-content-center">  
-          <nav className="col-8">
+          <nav className="col-8 menu-anchor">
             <Button variant="Link" size="lg" href="#section-one">Início</Button>
             <Button variant="Link" size="lg" href="#section-two">Nossa História</Button>
             <Button variant="Link" size="lg" href="#section-three">Forró do Ultra!</Button>
