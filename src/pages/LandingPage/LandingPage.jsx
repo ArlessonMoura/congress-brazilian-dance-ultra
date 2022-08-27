@@ -17,7 +17,7 @@ class LandingPage extends Component {
     this.setLanguage = this.setLanguage.bind(this);
   }
 
-  setLaguage(lang) {
+  setLanguage(lang) {
     this.setState({ language: lang });    
   } 
 
