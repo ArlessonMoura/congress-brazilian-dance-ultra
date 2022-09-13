@@ -19,40 +19,47 @@ class LandingPage extends Component {
 
   setLanguage(lang) {
     this.setState({ language: lang });    
-  } 
-
+  }
+  
   render() {
     return (
       <>
         <Header/>
-        <main>   
-          <section id="section-one">
-            <img className="col-2" src={ cornerTopL } alt="left-top-corner" />
+        <main>
+
+          <section id="section-one">           
+            <img className="col-2" src={ cornerTopL } alt="left-top-corner" />           
             <p>Hello World!</p>
-            <h1>Segmento 1</h1>
-            <img className="col-2" src={ cornerTopR } alt="right-top-corner" />
+            <h1>Segmento 1</h1>           
+            <img className="col-2" src={ cornerTopR } alt="right-top-corner"/>          
           </section>
+         
+          <section className="parallax">                   
+           {/* section criada apenas para conter o background em efeito parallax */}           
+          </section> 
+
           <section id="section-two">
             <p>Hello World!</p>
             <h1>Segmento 2</h1>
+          </section>
+
+          <section id="section-three">
+            <p>Hello World!</p>
+            <h1>Segmento 3</h1>
           </section>
 
           <section className="parallax">
             {/* section criada apenas para conter o background em efeito parallax */}
           </section> 
 
-          <section id="section-three">
+          <section id="section-four">            
+            <img className="col-2" src={ cornerBottomL } alt="left-bottom-corner" />           
             <p>Hello World!</p>
-            <h1>Segmento 3</h1>
-          </section>
-          <section id="section-four">
-            <img className="col-2" src={ cornerBottomL } alt="left-bottom-corner" />
-            <p>Hello World!</p>
-            <h1>Segmento 4</h1>
-            <img className="col-2" src={ cornerBottomR } alt="right-bottom-corner" />
+            <h1>Segmento 4</h1>           
+            <img className="col-2" src={ cornerBottomR } alt="right-bottom-corner" />           
           </section>
         </main>
-        <Footer/>  
+        {/* <Footer/>   */}
       </>
     );
   }

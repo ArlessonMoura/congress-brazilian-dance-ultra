@@ -3,7 +3,7 @@ main {
   width: 100vw;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  background-image: radial-gradient(circle, #f5f0dc, #e2d4b1, #e9cb99, #e2b88c, #d6aa80, #a36b49);
+  background-image: radial-gradient(circle, #e2d4b1, #e9cb99, #e2b88c, #d6aa80, #a36b49);
 }
 
 section {
@@ -14,7 +14,7 @@ section {
 }
 
 section.parallax {
-  height: 70%;
+  height: 85%;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
