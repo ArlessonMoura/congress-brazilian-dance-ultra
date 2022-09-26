@@ -1,0 +1,19 @@
+aside {
+  height: 100%;
+  width: 4rem;
+  position: fixed;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-lang {
+  display: flex;
+  flex-direction: column;
+}
+
+.languages-icons {
+  max-width: 3rem;
+  margin: .5rem;
+}

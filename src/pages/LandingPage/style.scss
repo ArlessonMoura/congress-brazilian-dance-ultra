@@ -1,4 +1,10 @@
 main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+article {
   height: 100vh;
   width: 100vw;
   scroll-snap-type: y mandatory;
@@ -29,9 +35,13 @@ section.parallax {
 section#section-one{
   padding: 0;
   display: flex;
+  align-items: flex-start;
   align-content: center;
   justify-content: space-between;
-  align-items: baseline;
+}
+
+.cast {
+  max-width: 50%;
 }
 
 section#section-four{
