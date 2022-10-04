@@ -1,6 +1,6 @@
 @font-face {
-  font-family: armorial;
-  src: url(./assets/fonts/armorial.ttf);
+  font-family: MontSerrat;
+  src: url(./assets/fonts/MontserratAlternates.ttf);
 }
 
 *,
@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: MontSerrat;
   font-size: 1vw;
   scroll-behavior: smooth;
 }

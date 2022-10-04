@@ -8,7 +8,7 @@ import cornerTopL from '../../assets/images/left-top-big.png';
 import cornerTopR from '../../assets/images/right-top-big.png';
 import cornerBottomL from '../../assets/images/left-bottom-big.png';
 import cornerBottomR from '../../assets/images/right-bottom-big.png';
-import opening from '../../assets/images/opening_clean_enhance.png';
+import opening from '../../assets/images/opening-2023.png';
 import './style.scss';
 
 class LandingPage extends Component {
@@ -59,16 +59,24 @@ class LandingPage extends Component {
         <main>
           <Languages />
           <article>
-            <section id="section-one">
-              <img className="col-2" src={cornerTopL} alt="left-top-corner" />
+            <section id="section-one" className="parallax">
 
-              <img className="cast col-8" src={opening} alt="opening-presents" />
+              <div className="corners col-2">
+                <img src={cornerTopL} alt="left-top-corner" />
+              </div>
 
-              <img className="col-2" src={cornerTopR} alt="right-top-corner" />
-            </section>
+              <div className="opening col-8">
+                <img src={opening} alt="opening-presents" />
+                <div className="date">
+                  <p>21, 22 e 23 de Abril.</p>
+                  <p>Corre que está chegando!</p>
+                </div>
+              </div>
 
-            <section className="parallax">
-              {/* section criada apenas para conter o background em efeito parallax */}
+              <div className="corners col-2">
+                <img src={cornerTopR} alt="right-top-corner" />
+              </div>
+
             </section>
 
             <section id="section-two">
@@ -79,10 +87,6 @@ class LandingPage extends Component {
             <section id="section-three">
               <p>Hello World!</p>
               <h1>Segmento 3</h1>
-            </section>
-
-            <section className="parallax">
-              {/* section criada apenas para conter o background em efeito parallax */}
             </section>
 
             <section id="section-four">
