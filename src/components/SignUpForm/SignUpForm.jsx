@@ -96,12 +96,15 @@ class SignUpForm extends Component {
         </Row>
 
         <Row>
-          <Form.Check
-            name="accepted"
-            value={accepted}
-            required
-            label="Eu concordo com os termos e condições da Política de Privacidade"
-          />
+          <Col>
+            <Form.Check
+              className="mb-3"
+              name="accepted"
+              value={accepted}
+              required
+              label="Eu concordo com os termos e condições da Política de Privacidade"
+            />
+          </Col>
         </Row>
 
         <Row>
