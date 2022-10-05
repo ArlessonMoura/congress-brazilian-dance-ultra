@@ -7,11 +7,17 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 class LoginModal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.logIn = this.logIn.bind(this);
+  }
+
   // paymentCardForm(){
   //   return ();
   // }
 
-  signIn() {
+  logIn() {
     return (
       <Form>
         <FormGroup className="mb-3" controlId="formBasicCheckbox">
@@ -40,7 +46,6 @@ class LoginModal extends Component {
           Submit
         </Button>
       </Form>
-
     );
   }
 
@@ -57,7 +62,9 @@ class LoginModal extends Component {
           <Modal.Title>Cartão Inscrição</Modal.Title>
         </Modal.Header>
 
-        <Modal.Body />
+        <Modal.Body>
+          {this.logIn()}
+        </Modal.Body>
 
         <Modal.Footer>
           <Button variant="secondary" onClick={() => showModal(false)}>
