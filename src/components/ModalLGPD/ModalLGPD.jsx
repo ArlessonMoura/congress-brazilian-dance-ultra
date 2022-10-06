@@ -19,14 +19,14 @@ function ModalLGPD(props) {
       <Modal.Body>
         <article>
           <p>
-            &quotForró do Ultra &trade;&quot se compromete com a transparência no
+            &#39;Forró do Ultra &trade;&#39; se compromete com a transparência no
             tratamento de dados pessoais dos nossos usuários/clientes.
             Por isso, esta presente Política de Privacidade estabelece
             que os dados coletados na inscrição do evento
             estarão sob posse única da organização do evento, com finalidades restritas a:
 
             1 - Identificação dos participantes e controle de pagamentos;
-            2 - Uso em futuras ações de divulgação do &quotForró do Ultra &trade;&quot
+            2 - Uso em futuras ações de divulgação do &#39;Forró do Ultra &trade;&#39;
             e suas marcas adjacentes.
 
           </p>
