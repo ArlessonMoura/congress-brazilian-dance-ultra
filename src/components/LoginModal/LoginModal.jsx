@@ -1,50 +1,62 @@
 import React, { Component } from 'react';
 import {
-  Form, FormGroup, FloatingLabel, Button,
+  Form, FormGroup, FloatingLabel, Button, Row, Col,
 } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import PropTypes from 'prop-types';
 import './style.scss';
 
 class LoginModal extends Component {
-  constructor(props) {
-    super(props);
-
-    this.logIn = this.logIn.bind(this);
+  constructor() {
+    super();
+    this.state = {
+      cpf: '',
+      password: '',
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  // paymentCardForm(){
-  //   return ();
-  // }
+  handleInputChange(event) {
+    const { target } = event;
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
-  logIn() {
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  signIn() {
+    const { cpf, password } = this.state;
     return (
       <Form>
-        <FormGroup className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="" />
-        </FormGroup>
+        <Row>
+          <Col>
+            <FormGroup className="mb-3" controlId="formCPF">
+              <FloatingLabel label="CPF">
+                <Form.Control onChange={this.handleInputChange} name="cpf" value={cpf} required type="number" placeholder="CPF" pattern="" />
+              </FloatingLabel>
+            </FormGroup>
+          </Col>
+        </Row>
 
-        <FormGroup className="mb-3" controlId="formBasicId">
-          <FloatingLabel>
-            <Form.Control type="text" placeholder="Nome Completo" />
-          </FloatingLabel>
-        </FormGroup>
+        <Row>
+          <Col>
+            <FormGroup className="mb-3" controlId="formPassword">
+              <FloatingLabel label="SENHA">
+                <Form.Control onChange={this.handleInputChange} name="password" value={password} required type="password" placeholder="Senha" />
+              </FloatingLabel>
+            </FormGroup>
+          </Col>
+        </Row>
 
-        <FormGroup className="mb-3" controlId="formBasicId">
-          <FloatingLabel>
-            <Form.Control type="number" placeholder="CPF" />
-          </FloatingLabel>
-        </FormGroup>
-
-        <FormGroup className="mb-3" controlId="formBasicPassword">
-          <FloatingLabel>
-            <Form.Control type="password" placeholder="Senha" />
-          </FloatingLabel>
-        </FormGroup>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Row>
+          <div className="d-flex justify-content-center col-12">
+            <Button variant="outline-dark" type="submit">
+              Sign-in
+            </Button>
+          </div>
+        </Row>
       </Form>
     );
   }
@@ -63,16 +75,14 @@ class LoginModal extends Component {
         </Modal.Header>
 
         <Modal.Body>
-          {this.logIn()}
+          {this.signIn()}
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => showModal(false)}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={() => showModal(false)}>
-            Save Changes
-          </Button>
+          <p>
+            Aqui você pode acessar segunda via de Boleto
+            (que também é seu cartão de inscrição), e alterar dados cadastrais.
+          </p>
         </Modal.Footer>
       </Modal>
     );
