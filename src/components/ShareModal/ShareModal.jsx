@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Button, Modal, Form, InputGroup,
 } from 'react-bootstrap';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import whatsappIcon from '../../assets/images/whatsapp.png';
 import facebookIcon from '../../assets/images/facebook.png';
@@ -13,15 +14,6 @@ class ShareModal extends Component {
     this.state = {
       url: 'https://www.instagram.com/ultract/',
     };
-    this.copyURL = this.copyURL.bind(this);
-  }
-
-  copyURL() {
-    const { url } = this.state;
-    url.select();
-    url.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-    alert('Endereço do site copiado com sucesso!');
   }
 
   render() {
@@ -57,16 +49,17 @@ class ShareModal extends Component {
             <img src={whatsappIcon} alt="Whatsapp" />
           </Button>
 
-          <InputGroup hasValidation>
-            <Button onClick={() => this.copyURL()}>
-              <InputGroup.Text id="inputGroupPrepend">Copiar</InputGroup.Text>
-            </Button>
-            <Form.Control
-              type="text"
-              value={url}
-            />
-          </InputGroup>
+          <InputGroup>
+            <CopyToClipboard text={url} onCopy={() => alert('Endereço do site copiado com sucesso!')}>
+              <InputGroup.Text onClick={this.copyURL}>
+                <Button variant="light">
+                  Copiar
+                </Button>
+              </InputGroup.Text>
+            </CopyToClipboard>
 
+            <Form.Control readOnly type="text" value={url} />
+          </InputGroup>
         </Modal.Body>
 
         <Modal.Footer>
