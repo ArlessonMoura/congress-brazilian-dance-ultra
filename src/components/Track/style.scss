@@ -1,0 +1,16 @@
+.map {
+  height: 58vh;  
+}
+
+.map>iframe {
+  height: inherit;
+  width: inherit;
+}
+
+.route-icons {
+  height: 25vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;  
+}
