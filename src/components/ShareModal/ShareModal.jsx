@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Button, Modal, Form, InputGroup,
+  Button, Modal, Form, InputGroup, Row, Col,
 } from 'react-bootstrap';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
@@ -27,44 +27,48 @@ class ShareModal extends Component {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Cartão Inscrição</Modal.Title>
+          <Modal.Title>Compartilhe o &#39;Forró do Ultra &trade;&#39;!!!</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <Button
-            variant="Link"
-            target="_blank"
-            size="lg"
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.instagram.com/ultract/"
-          >
-            <img src={facebookIcon} alt="Whatsapp" />
-          </Button>
+          <Row>
+            <Col>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://www.instagram.com/ultract/"
+                rel="noreferrer"
+              >
+                <input type="image" className="share" src={facebookIcon} alt="Whatsapp" />
+              </a>
+            </Col>
+            <Col>
+              <a
+                target="_blank"
+                href="https://api.whatsapp.com/send?text=https://www.instagram.com/ultract/"
+                rel="noreferrer"
+              >
+                <input type="image" className="share" src={whatsappIcon} alt="Whatsapp" />
+              </a>
+            </Col>
+          </Row>
 
-          <Button
-            variant="Link"
-            target="_blank"
-            size="lg"
-            href="https://api.whatsapp.com/send?text=https://www.instagram.com/ultract/"
-          >
-            <img src={whatsappIcon} alt="Whatsapp" />
-          </Button>
+          <Row>
+            <Col>
+              <InputGroup>
+                <CopyToClipboard text={url} onCopy={() => alert('Endereço do site copiado com sucesso!')}>
+                  <InputGroup.Text onClick={this.copyURL}>
+                    <Button variant="light">
+                      Copiar
+                    </Button>
+                  </InputGroup.Text>
+                </CopyToClipboard>
 
-          <InputGroup>
-            <CopyToClipboard text={url} onCopy={() => alert('Endereço do site copiado com sucesso!')}>
-              <InputGroup.Text onClick={this.copyURL}>
-                <Button variant="light">
-                  Copiar
-                </Button>
-              </InputGroup.Text>
-            </CopyToClipboard>
+                <Form.Control readOnly type="text" value={url} />
+              </InputGroup>
+            </Col>
+          </Row>
 
-            <Form.Control readOnly type="text" value={url} />
-          </InputGroup>
         </Modal.Body>
-
-        <Modal.Footer>
-          <p>Compartilhe o &#39;Forró do Ultra &trade;&#39;!!!</p>
-        </Modal.Footer>
       </Modal>
     );
   }
