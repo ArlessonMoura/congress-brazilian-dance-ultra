@@ -1,0 +1,13 @@
+.accordion {
+  --bs-accordion-bg: none;
+  --bs-accordion-border-color: #000;
+  --bs-accordion-btn-bg: #D2B48C;
+  --bs-accordion-btn-focus-border-color: #e9cb99;
+  --bs-accordion-active-color: #000;
+  --bs-accordion-active-bg: #D2B48C;
+}
+
+.accordion-body {
+  height: 60vh;
+  background-color: none;
+}
