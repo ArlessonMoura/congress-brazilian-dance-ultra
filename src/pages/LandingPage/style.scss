@@ -57,9 +57,9 @@ section.parallax {
   align-items: center; 
 }
 
-.date>p, .contacts>h2, .share>h2 {
+.call-us, .share-us {
   color: white; 
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-shadow: -1px -1px 0px black, -1px 1px 0px black, 1px -1px 0px black, 1px 0px 0px black;
   font-family: HomemadeApple;
 }
@@ -77,8 +77,7 @@ section#section-four{
   justify-content: space-between;
 }
 
-.subscription {
-  padding-top: 5rem;  
+.subscription {  
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -86,13 +85,9 @@ section#section-four{
   justify-content:space-evenly;
 }
 
-.share, .contacts {
-  margin: 2rem 0;
-}
-
 .contact-icons {
   padding: 0 2rem;
-  width: 12rem;
+  width: 8rem;
 }
 
 .nav-tabs {
