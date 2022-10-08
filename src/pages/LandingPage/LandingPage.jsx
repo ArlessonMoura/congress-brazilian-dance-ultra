@@ -6,6 +6,7 @@ import Languages from '../../components/LangMenu/LangMenu';
 import ShareModal from '../../components/ShareModal/ShareModal';
 import ScheduleCongress from '../../components/ScheduleCongress/ScheduleCongress';
 import Track from '../../components/Track/Track';
+import Attractions from '../../components/Attractions/Attractions';
 import cornerTopL from '../../assets/images/left-top-big.png';
 import cornerTopR from '../../assets/images/right-top-big.png';
 import cornerBottomL from '../../assets/images/left-bottom-big.png';
@@ -75,11 +76,11 @@ class LandingPage extends Component {
               <div className="d-flex flex-column align-content-center justify-content-center col-8">
                 <Tabs
                   className="mb-3"
-                  defaultActiveKey="schedule"
+                  defaultActiveKey="attractions"
                   justify
                 >
                   <Tab eventKey="attractions" title="Atrações">
-                    <ScheduleCongress />
+                    <Attractions />
                   </Tab>
                   <Tab eventKey="schedule" title="Cronograma">
                     <ScheduleCongress />
