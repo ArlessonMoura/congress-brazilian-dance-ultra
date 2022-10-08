@@ -45,8 +45,8 @@ class SignUpForm extends Component {
 
     return (
       <Form>
-        <Button title="Politica de Privacidade" variant="Link" size="lg" onClick={() => this.rulesModal(true)}>
-          <i className="bi bi-question-diamond-fill" />
+        <Button title="Politica de Privacidade" variant="Link" size="sm" onClick={() => this.rulesModal(true)}>
+          <i className="bi bi-info-circle-fill">LGPD</i>
         </Button>
         <Row>
           <FormGroup className="mb-3" controlId="formName">
