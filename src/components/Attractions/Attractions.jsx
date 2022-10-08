@@ -1,46 +1,35 @@
 import React from 'react';
-import { Carousel, Image } from 'react-bootstrap';
-import test4 from '../../assets/images/test4.jpeg';
-import test5 from '../../assets/images/test5.jpeg';
-import test6 from '../../assets/images/test6.jpeg';
-import test7 from '../../assets/images/test7.jpeg';
+
+// import test4 from '../../assets/images/test4.jpeg';
+// import test5 from '../../assets/images/test5.jpeg';
+// import test6 from '../../assets/images/test6.jpeg';
+// import test7 from '../../assets/images/test7.jpeg';
 import './style.scss';
 
 function Attractions() {
   return (
-    <Carousel variant="dark">
-      <Carousel.Item>
-        <Image
-          fluid
-          src={test4}
-          alt="First slide"
-        />
-      </Carousel.Item>
 
-      <Carousel.Item>
-        <Image
-          fluid
-          src={test5}
-          alt="Second slide"
-        />
-      </Carousel.Item>
+    <div className="test">
+      <h1>pessoas</h1>
+    </div>
 
-      <Carousel.Item>
-        <Image
-          fluid
-          src={test6}
-          alt="Third slide"
-        />
-      </Carousel.Item>
+  // <Carousel variant="dark">
+  //   <Carousel.Item>
+  //     <Image src={test4} alt="First slide" />
+  //   </Carousel.Item>
 
-      <Carousel.Item>
-        <Image
-          fluid
-          src={test7}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-    </Carousel>
+  //   <Carousel.Item>
+  //     <Image src={test5} alt="Second slide" />
+  //   </Carousel.Item>
+
+  //   <Carousel.Item>
+  //     <Image src={test6} alt="Third slide" />
+  //   </Carousel.Item>
+
+  //   <Carousel.Item>
+  //     <Image src={test7} alt="Third slide" />
+  //   </Carousel.Item>
+  // </Carousel>
   );
 }
 
