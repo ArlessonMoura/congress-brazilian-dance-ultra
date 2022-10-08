@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Tabs, Tab } from 'react-bootstrap';
+import {
+  Tabs, Tab, Row,
+} from 'react-bootstrap';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import Header from '../../components/Header/Header';
 import Languages from '../../components/LangMenu/LangMenu';
@@ -104,34 +106,32 @@ class LandingPage extends Component {
               </div>
 
               <div className="subscription col-8">
+                <Row>
+                  <SignUpForm />
+                </Row>
 
-                <SignUpForm />
+                <Row>
+                  <h2 className="call-us">Fale conosco, e compartilhe Forró do Ultra!</h2>
+                  <div className="col-8 call-icons">
+                    <a
+                      href="https://api.whatsapp.com/send?phone=5581996694649&text=Ol%C3%A1%2C%20estou%20interessado%20em%20me%20inscrever%20no%20%22Forr%C3%B3%20do%20Ultra%22!!!"
+                      target="_blank"
+                      rel="external noreferrer"
+                    >
+                      <input className="contact-icons" type="image" src={whatsappIcon} alt="whatsapp-icon" />
+                    </a>
 
-                <nav className="d-flex flex-column align-items-center web-social">
+                    <a href="https://www.instagram.com/ultract/" target="_blank" rel="external noreferrer">
+                      <input className="contact-icons" type="image" src={instagramIcon} alt="instagram-icon" />
+                    </a>
 
-                  <div className="d-flex flex-column align-items-center contacts">
-                    <h2>Fale com um representante</h2>
-                    <div className="links">
-                      <a
-                        href="https://api.whatsapp.com/send?phone=5581996694649&text=Ol%C3%A1%2C%20estou%20interessado%20em%20me%20inscrever%20no%20%22Forr%C3%B3%20do%20Ultra%22!!!"
-                        target="_blank"
-                        rel="external noreferrer"
-                      >
-                        <input className="contact-icons" type="image" src={whatsappIcon} alt="whatsapp-icon" />
-                      </a>
+                    <a href="https://web.facebook.com/UltraCTBR" target="_blank" rel="external noreferrer">
+                      <input className="contact-icons" type="image" src={facebookIcon} alt="facebook-icon" />
+                    </a>
 
-                      <a href="https://www.instagram.com/ultract/" target="_blank" rel="external noreferrer">
-                        <input className="contact-icons" type="image" src={instagramIcon} alt="instagram-icon" />
-                      </a>
-
-                      <a href="https://web.facebook.com/UltraCTBR" target="_blank" rel="external noreferrer">
-                        <input className="contact-icons" type="image" src={facebookIcon} alt="facebook-icon" />
-                      </a>
-                    </div>
                   </div>
 
-                  <div className="d-flex flex-column align-items-center share">
-                    <h2>Compartilhe nas redes</h2>
+                  <div className="col-4 share-icons">
                     <input
                       className="contact-icons"
                       onClick={() => this.showShareModal(true)}
@@ -139,12 +139,12 @@ class LandingPage extends Component {
                       src={shareIcon}
                       alt="share-icon"
                     />
-                    <ShareModal
-                      showShareModal={this.showShareModal}
-                      isModalShareOn={isModalShareOn}
-                    />
                   </div>
-                </nav>
+                </Row>
+                <ShareModal
+                  showShareModal={this.showShareModal}
+                  isModalShareOn={isModalShareOn}
+                />
               </div>
 
               <div className="d-flex flex-row-reverse align-items-end col-2">

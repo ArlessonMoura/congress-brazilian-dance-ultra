@@ -44,7 +44,7 @@ class SignUpForm extends Component {
     } = this.state;
 
     return (
-      <Form className="sign-up">
+      <Form>
         <Button title="Politica de Privacidade" variant="Link" size="lg" onClick={() => this.rulesModal(true)}>
           <i className="bi bi-question-diamond-fill" />
         </Button>
