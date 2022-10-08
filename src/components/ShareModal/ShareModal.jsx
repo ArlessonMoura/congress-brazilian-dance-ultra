@@ -40,8 +40,6 @@ class ShareModal extends Component {
               >
                 <input type="image" className="share" src={facebookIcon} alt="Whatsapp" />
               </a>
-            </Col>
-            <Col>
               <a
                 target="_blank"
                 href="https://api.whatsapp.com/send?text=https://www.instagram.com/ultract/"
