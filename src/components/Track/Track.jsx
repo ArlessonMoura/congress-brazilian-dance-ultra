@@ -19,7 +19,7 @@ function Track() {
             target="_blank"
             rel="external noreferrer"
           >
-            <input className="contact-icons" type="image" src={gloogleMapsIcon} alt="whatsapp-icon" />
+            <input className="track-icons" type="image" src={gloogleMapsIcon} alt="whatsapp-icon" />
           </a>
 
           <a
@@ -27,7 +27,7 @@ function Track() {
             target="_blank"
             rel="external noreferrer"
           >
-            <input className="contact-icons" type="image" src={wazeIcon} alt="whatsapp-icon" />
+            <input className="track-icons" type="image" src={wazeIcon} alt="whatsapp-icon" />
           </a>
         </Col>
       </Row>
