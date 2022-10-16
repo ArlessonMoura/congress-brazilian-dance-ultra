@@ -22,11 +22,11 @@ class Header extends Component {
       <>
         <header className="d-flex justify-content-center">
           <nav className="col-8 menu-anchor">
-            <Button variant="Link" size="lg" href="#section-one">Início</Button>
-            <Button variant="Link" size="lg" href="#section-two">Nossa História</Button>
-            <Button variant="Link" size="lg" href="#section-three">Forró do Ultra!</Button>
-            <Button variant="Link" size="lg" href="#section-four">Inscrições</Button>
-            <Button variant="Link" size="lg" onClick={() => this.showModal(true)}>
+            <Button variant="outline-dark" size="lg" href="#section-one">Início</Button>
+            <Button variant="outline-dark" size="lg" href="#section-two">Nossa História</Button>
+            <Button variant="outline-dark" size="lg" href="#section-three">Forró do Ultra!</Button>
+            <Button variant="outline-dark" size="lg" href="#section-four">Inscrições</Button>
+            <Button variant="outline-dark" size="lg" onClick={() => this.showModal(true)}>
               <i className="bi bi-person-circle" />
             </Button>
           </nav>
