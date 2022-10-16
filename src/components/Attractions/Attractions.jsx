@@ -16,7 +16,7 @@ function Attractions() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h2>Quais serão os professores e competidores desse ano?</h2>
+          <h2 className="name">Quais serão os professores e competidores desse ano?</h2>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -28,8 +28,8 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2>Celio Rocha</h2>
-          <h3>Aqui é claro que é presença garantida!</h3>
+          <h2 className="name">Celio Rocha</h2>
+          <h3>Aqui, é claro que é presença garantida!</h3>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -41,9 +41,9 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2>Fábia & Erisson</h2>
+          <h2 className="name">Fábia & Erisson</h2>
           <h3>
-            Também presença mais que garntida!
+            Também são presença mais que garantida!
           </h3>
         </Carousel.Caption>
       </Carousel.Item>
@@ -56,9 +56,9 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2>Erica & Witheney</h2>
+          <h2 className="name">Erica & Witheney</h2>
           <h3>
-            E esse casal fenomenal, será que virão para tentar o Bi-campeonato!
+            E esse casal fenomenal, será que virão para tentar o Bi-campeonato?
           </h3>
         </Carousel.Caption>
       </Carousel.Item>
