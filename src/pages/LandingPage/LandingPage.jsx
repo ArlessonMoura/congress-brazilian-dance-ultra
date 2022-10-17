@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Tabs, Tab, Row,
 } from 'react-bootstrap';
+import { Fade } from 'react-awesome-reveal';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import Header from '../../components/Header/Header';
 import Languages from '../../components/LangMenu/LangMenu';
@@ -27,9 +28,15 @@ class LandingPage extends Component {
     super();
     this.state = {
       isModalShareOn: false,
+      lang: 'pt-br',
     };
 
     this.showShareModal = this.showShareModal.bind(this);
+    this.handleLanguages = this.handleLanguages.bind(this);
+  }
+
+  handleLanguages(value) {
+    this.setState({ lang: value });
   }
 
   showShareModal(bool) {
@@ -37,29 +44,40 @@ class LandingPage extends Component {
   }
 
   render() {
-    const { isModalShareOn } = this.state;
+    const { isModalShareOn, lang } = this.state;
     return (
       <>
         <Header />
+
         <main>
-          <Languages />
+          <Languages handleLanguages={this.handleLanguages} />
+
           <article className="major-main">
             <section id="section-one" className="main-splits parallax">
 
               <div className="d-flex align-items-start col-2">
-                <img className="corners" src={cornerTopL} alt="left-top-corner" />
+                <Fade direction="left" delay="50">
+                  <img className="corners" src={cornerTopL} alt="left-top-corner" />
+                </Fade>
               </div>
 
               <div className="opening col-8">
-                <img src={opening} alt="opening-presents" />
-                <div className="date">
-                  <p>21, 22 e 23 de Abril.</p>
-                  <p>Corre que está chegando!</p>
-                </div>
+                <Fade direction="up" delay="100">
+                  <img className="logo" src={opening} alt="opening-presents" />
+                </Fade>
+
+                <Fade delay="150">
+                  <div className="date">
+                    <p>21, 22 e 23 de Abril.</p>
+                    <p>Corre que está chegando!</p>
+                  </div>
+                </Fade>
               </div>
 
               <div className="d-flex flex-row-reverse align-items-start col-2">
-                <img className="corners" src={cornerTopR} alt="right-top-corner" />
+                <Fade direction="right" delay="50">
+                  <img className="corners" src={cornerTopR} alt="right-top-corner" />
+                </Fade>
               </div>
 
             </section>
