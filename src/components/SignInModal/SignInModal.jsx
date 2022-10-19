@@ -6,34 +6,52 @@ import Modal from 'react-bootstrap/Modal';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-class LoginModal extends Component {
+class SignInModal extends Component {
   constructor() {
     super();
     this.state = {
       cpf: '',
       password: '',
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.checkId = this.checkId.bind(this);
   }
 
-  handleInputChange(event) {
-    const { target } = event;
-    const { name, value } = target;
+  handleInput(event) {
+    const { name, value } = event.target;
 
-    this.setState({
-      [name]: value,
-    });
+    switch (name) {
+      case 'cpf':
+        this.setState({
+          [name]: value.replace(/\D/g, '')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+            .replace(/(-\d{2})\d+?$/, '$1'),
+        });
+        break;
+
+      default:
+        this.setState({
+          [name]: value,
+        });
+        break;
+    }
+  }
+
+  checkId() {
+
   }
 
   signIn() {
     const { cpf, password } = this.state;
     return (
-      <Form>
+      <Form onSubmit={this.checkId} action="/signin" method="post">
         <Row>
           <Col>
             <FormGroup className="mb-3" controlId="formCPF">
               <FloatingLabel label="CPF">
-                <Form.Control onChange={this.handleInputChange} name="cpf" value={cpf} required type="number" placeholder="CPF" pattern="" />
+                <Form.Control onChange={this.handleInput} name="cpf" value={cpf} required type="text" placeholder="CPF" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" />
               </FloatingLabel>
             </FormGroup>
           </Col>
@@ -43,7 +61,7 @@ class LoginModal extends Component {
           <Col>
             <FormGroup className="mb-3" controlId="formPassword">
               <FloatingLabel label="SENHA">
-                <Form.Control onChange={this.handleInputChange} name="password" value={password} required type="password" placeholder="Senha" />
+                <Form.Control minLength="6" maxLength="10" onChange={this.handleInput} name="password" value={password} required type="password" placeholder="Senha" />
               </FloatingLabel>
             </FormGroup>
           </Col>
@@ -88,9 +106,9 @@ class LoginModal extends Component {
   }
 }
 
-LoginModal.propTypes = {
+SignInModal.propTypes = {
   isModalOn: PropTypes.bool.isRequired,
   showModal: PropTypes.func.isRequired,
 };
 
-export default LoginModal;
+export default SignInModal;

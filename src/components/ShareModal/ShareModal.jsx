@@ -4,8 +4,8 @@ import {
 } from 'react-bootstrap';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
-import whatsappIcon from '../../assets/images/whatsapp.png';
-import facebookIcon from '../../assets/images/facebook.png';
+import whatsappIcon from '../../assets/images/whatsapp.svg';
+import facebookIcon from '../../assets/images/facebook.svg';
 import './style.scss';
 
 class ShareModal extends Component {

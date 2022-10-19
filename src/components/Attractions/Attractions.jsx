@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import wtp from '../../assets/images/wtp.png';
-import attraction1 from '../../assets/images/attraction1.png';
-import attraction2 from '../../assets/images/attraction2.png';
-import attraction3 from '../../assets/images/attraction3.png';
+import wtp from '../../assets/images/wtp.svg';
+import attraction1 from '../../assets/images/attraction1.svg';
+import attraction2 from '../../assets/images/attraction2.svg';
+import attraction3 from '../../assets/images/attraction3.svg';
 import './style.scss';
 
 function Attractions() {

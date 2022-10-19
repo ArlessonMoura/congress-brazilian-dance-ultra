@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import gloogleMapsIcon from '../../assets/images/maps.png';
-import wazeIcon from '../../assets/images/waze.png';
+import gloogleMapsIcon from '../../assets/images/maps.svg';
+import wazeIcon from '../../assets/images/waze.svg';
 import './style.scss';
 
 function Track() {

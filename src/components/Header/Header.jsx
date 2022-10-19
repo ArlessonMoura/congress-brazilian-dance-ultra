@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
-import LoginModal from '../LoginModal/LoginModal';
+import SignInModal from '../SignInModal/SignInModal';
 import './style.scss';
 
 class Header extends Component {
@@ -31,7 +31,7 @@ class Header extends Component {
             </Button>
           </nav>
         </header>
-        <LoginModal showModal={this.showModal} isModalOn={isModalOn} />
+        <SignInModal showModal={this.showModal} isModalOn={isModalOn} />
       </>
     );
   }

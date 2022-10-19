@@ -10,17 +10,17 @@ import ShareModal from '../../components/ShareModal/ShareModal';
 import ScheduleCongress from '../../components/ScheduleCongress/ScheduleCongress';
 import Track from '../../components/Track/Track';
 import Attractions from '../../components/Attractions/Attractions';
-import cornerTopL from '../../assets/images/left-top-big.png';
-import cornerTopR from '../../assets/images/right-top-big.png';
-import cornerBottomL from '../../assets/images/left-bottom-big.png';
-import cornerBottomR from '../../assets/images/right-bottom-big.png';
-import smallIconL from '../../assets/images/left-top-small.png';
-import smallIconR from '../../assets/images/right-top-small.png';
-import opening from '../../assets/images/opening2023.png';
-import whatsappIcon from '../../assets/images/whatsapp.png';
-import instagramIcon from '../../assets/images/instagram.png';
-import facebookIcon from '../../assets/images/facebook.png';
-import shareIcon from '../../assets/images/share.png';
+import cornerTopL from '../../assets/images/left-top-big.svg';
+import cornerTopR from '../../assets/images/right-top-big.svg';
+import cornerBottomL from '../../assets/images/left-bottom-big.svg';
+import cornerBottomR from '../../assets/images/right-bottom-big.svg';
+import smallIconL from '../../assets/images/left-top-small.svg';
+import smallIconR from '../../assets/images/right-top-small.svg';
+import opening from '../../assets/images/opening2023.svg';
+import whatsappIcon from '../../assets/images/whatsapp.svg';
+import instagramIcon from '../../assets/images/instagram.svg';
+import facebookIcon from '../../assets/images/facebook.svg';
+import shareIcon from '../../assets/images/share.svg';
 import './style.scss';
 
 class LandingPage extends Component {
