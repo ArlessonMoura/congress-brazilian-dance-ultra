@@ -3,9 +3,8 @@
   "name": "Forró do Ultra",
   "icons": [
     {
-      "src": "./favicon.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "./favicon.svg",
+      "type": "image/svg"
     }
   ],
   "start_url": ".",
