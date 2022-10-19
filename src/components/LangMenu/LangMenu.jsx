@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import brazilBtn from '../../assets/images/brazil.svg';
-import usBtn from '../../assets/images/usa.svg';
-import franceBtn from '../../assets/images/france.svg';
+import brazilBtn from '../../assets/images/brazil.png';
+import usBtn from '../../assets/images/usa.png';
+import franceBtn from '../../assets/images/france.png';
 
 import './style.scss';
 

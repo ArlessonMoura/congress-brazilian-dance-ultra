@@ -1,8 +1,8 @@
 import React from 'react';
 import { Accordion, Image } from 'react-bootstrap';
-import test1 from '../../assets/images/test1.svg';
-import test2 from '../../assets/images/test2.svg';
-import test3 from '../../assets/images/test3.svg';
+import test1 from '../../assets/images/test1.jpeg';
+import test2 from '../../assets/images/test2.jpeg';
+import test3 from '../../assets/images/test3.jpeg';
 import './style.scss';
 
 function ScheduleCongress() {
