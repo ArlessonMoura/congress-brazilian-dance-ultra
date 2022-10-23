@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
   Form, FormGroup, FloatingLabel, Button,
   Row, Col,
@@ -38,6 +39,17 @@ class SignUpForm extends Component {
     this.setState({ privacyPolice: bool });
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  usoAxios() {
+    console.log('oiii');
+    const url = 'http://127.0.0.1:8103/api/teste-react';
+    axios.get(url).then((response) => {
+      if (response.data) {
+        console.log('aaaaa');
+      }
+    });
+  }
+
   render() {
     const {
       name, cpf, birth, email, phone, password, password2, accepted, privacyPolice,
@@ -45,6 +57,9 @@ class SignUpForm extends Component {
 
     return (
       <Form>
+        <Button title="Oii" variant="Link" size="sm" onClick={this.usoAxios}>
+          Axios
+        </Button>
         <Button title="Politica de Privacidade" variant="Link" size="sm" onClick={() => this.rulesModal(true)}>
           <i className="bi bi-info-circle-fill">LGPD</i>
         </Button>

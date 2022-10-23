@@ -28,15 +28,9 @@ class LandingPage extends Component {
     super();
     this.state = {
       isModalShareOn: false,
-      lang: 'pt-br',
     };
 
     this.showShareModal = this.showShareModal.bind(this);
-    this.handleLanguages = this.handleLanguages.bind(this);
-  }
-
-  handleLanguages(value) {
-    this.setState({ lang: value });
   }
 
   showShareModal(bool) {
@@ -44,7 +38,7 @@ class LandingPage extends Component {
   }
 
   render() {
-    const { isModalShareOn, lang } = this.state;
+    const { isModalShareOn } = this.state;
     return (
       <>
         <Header />
