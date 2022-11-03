@@ -1,3 +1,4 @@
+//Macrostructure: Sections view scheme with smooth scroll.
 main {
   display: flex;
   flex-direction: column;
@@ -20,6 +21,18 @@ main {
   scroll-snap-align: start;
 }
 
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//Microstructure: Sections (.main-splits) styles.
+
+//=====================Style for elements of first section. ==================
+section#section-one{
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 section.parallax {
   background-position: center center;
   background-size: cover;
@@ -32,8 +45,16 @@ section.parallax {
   box-shadow: inset 0 15rem 30rem 0 #a36b49;
 }
 
-.corners {
-  width: 100%;
+@keyframes slide {
+  0% {
+    background-image: url(../../assets/images/hotel-piscina-01.jpg);
+  }
+  50% {
+    background-image: url(../../assets/images/hotel-piscina-02.jpg);
+  }
+  100% {
+    background-image: url(../../assets/images/hotel-02.jpg);
+  }
 }
 
 .opening {  
@@ -64,36 +85,17 @@ section.parallax {
   font-family: HomemadeApple;
 }
 
-.call-us { 
-  font-size: 2rem;
-  font-family: HomemadeApple;
+//===================Style for elements of second section.====================
+
+.text {
+  padding: 0 2rem 4rem 6rem;
 }
 
-section#section-one{
-  padding-top: 0;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+.photos {
+  padding: 0 6rem 4rem 2rem;
 }
 
-section#section-four{
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-}
-
-.subscription {  
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content:space-evenly;
-}
-
-.contact-icons {
-  padding: 0 2rem;
-  width: 9rem;
-}
-
+//===================Style for elements of third section.=====================
 .nav-tabs {
   --bs-nav-tabs-border-width: 1.5px;
   --bs-nav-tabs-border-color: black;
@@ -115,19 +117,41 @@ section#section-four{
   height: 84vh; 
 }
 
+//=================Style for elements of fourth section.======================
+section#section-four{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.subscription {  
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:space-evenly;
+}
+
+.contact-icons {
+  padding: 0 2rem;
+  width: 9rem;
+}
+
+.call-us { 
+  font-size: 2rem;
+  font-family: HomemadeApple;
+}
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.corners {
+  width: 100%;
+}
+
+.promo {
+  width: 100%;
+}
+
 @font-face {
   font-family: HomemadeApple;
   src: url(../../assets/fonts/HomemadeApple.ttf);
 }
 
-@keyframes slide {
-  0% {
-    background-image: url(../../assets/images/hotel-piscina-01.jpg);
-  }
-  50% {
-    background-image: url(../../assets/images/hotel-piscina-02.jpg);
-  }
-  100% {
-    background-image: url(../../assets/images/hotel-02.jpg);
-  }
-}

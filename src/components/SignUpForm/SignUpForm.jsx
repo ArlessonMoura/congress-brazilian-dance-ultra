@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {
   Form, FormGroup, FloatingLabel, Button,
-  Row, Col,
+  Row, Col, Modal,
 } from 'react-bootstrap';
+import Translator from '../../assets/i18n/Translator';
 import ModalLGPD from '../ModalLGPD/ModalLGPD';
 import './style.scss';
 
@@ -19,6 +20,8 @@ class SignUpForm extends Component {
       password2: '',
       accepted: false,
       privacyPolice: false,
+      ageAlert: false,
+      passwordAlert: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.rulesModal = this.rulesModal.bind(this);
@@ -76,9 +79,8 @@ class SignUpForm extends Component {
     const diff = new Date('2023-4-21').getTime() - new Date(birth).getTime();
     const diffDays = diff / (1000 * 60 * 60 * 24);
     const babyAge = diffDays / 365.22;
-    console.log(babyAge);
     if (babyAge < 18) {
-      alert('Menores, com idade mínima de 16 anos, devem estar acompanhados de responsáveis, ou portarem autorização escrita; Menores de 16 apenas serão admitidos acompanhados de responsáveis.');
+      this.setState({ ageAlert: true });
       return false;
     }
     return true;
@@ -89,7 +91,7 @@ class SignUpForm extends Component {
     if (password !== password2) {
       event.preventDefault();
       event.stopPropagation();
-      alert('Sua senha não confere; Os campos de "Senha" e "Confirme Senha" devem ser iguais.');
+      this.setState({ passwordAlert: true });
       return false;
     }
     return true;
@@ -101,17 +103,32 @@ class SignUpForm extends Component {
 
   render() {
     const {
-      name, cpf, birth, email, phone, password, password2, accepted, privacyPolice,
+      name, cpf, birth, email, phone, password,
+      password2, accepted, privacyPolice,
+      ageAlert, passwordAlert,
     } = this.state;
 
     return (
       <Form onSubmit={this.checkPassword} action="/signup" method="post">
-        <Button title="Politica de Privacidade" variant="Link" size="sm" onClick={() => this.rulesModal(true)}>
-          <i className="bi bi-info-circle-fill">LGPD</i>
+
+        <Modal show={passwordAlert} onHide={() => this.setState({ passwordAlert: false })}>
+          <Modal.Body>
+            <Translator path="registration.form.passwordAlert" />
+          </Modal.Body>
+        </Modal>
+
+        <Button
+          variant="Link"
+          size="sm"
+          onClick={() => this.rulesModal(true)}
+        >
+          <i className="bi bi-info-circle-fill">
+            <Translator path="registration.form.btnPrivacy" />
+          </i>
         </Button>
         <Row>
           <FormGroup className="mb-3" controlId="formName">
-            <FloatingLabel label="NOME COMPLETO">
+            <FloatingLabel label={<Translator path="registration.form.labelName" />}>
               <Form.Control maxLength="50" size="lg" onChange={this.handleInputChange} name="name" value={name} required type="text" placeholder="nome completo" />
             </FloatingLabel>
           </FormGroup>
@@ -120,15 +137,21 @@ class SignUpForm extends Component {
         <Row>
           <Col xs={12} sm={12} lg>
             <FormGroup className="mb-3" controlId="formCPF">
-              <FloatingLabel label="CPF">
+              <FloatingLabel label={<Translator path="registration.form.labelCPF" />}>
                 <Form.Control size="lg" onChange={this.handleInputChange} name="cpf" value={cpf} required type="text" placeholder="CPF" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" />
               </FloatingLabel>
             </FormGroup>
           </Col>
 
+          <Modal show={ageAlert} onHide={() => this.setState({ ageAlert: false })}>
+            <Modal.Body>
+              <Translator path="registration.form.teenageAlert" />
+            </Modal.Body>
+          </Modal>
+
           <Col xs={12} sm={12} lg>
             <FormGroup className="mb-3" controlId="formBirth">
-              <FloatingLabel label="DATA DE NASCIMENTO">
+              <FloatingLabel label={<Translator path="registration.form.labelBirth" />}>
                 <Form.Control size="lg" onChange={this.handleInputChange} name="birth" value={birth} required type="date" placeholder="Data de Nascimento" onBlur={this.teenageVerify} />
               </FloatingLabel>
             </FormGroup>
@@ -137,7 +160,7 @@ class SignUpForm extends Component {
 
         <Row>
           <FormGroup className="mb-3" controlId="formEmail">
-            <FloatingLabel label="E-MAIL | exemplo@exemplo.com.br">
+            <FloatingLabel label={<Translator path="registration.form.labelEmail" />}>
               <Form.Control maxLength="50" size="lg" onChange={this.handleInputChange} name="email" value={email} required type="email" placeholder="e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
             </FloatingLabel>
           </FormGroup>
@@ -146,7 +169,7 @@ class SignUpForm extends Component {
         <Row>
           <Col xs={12} sm={12} lg>
             <FormGroup noValidate className="mb-3" controlId="formPhone">
-              <FloatingLabel label="CELULAR">
+              <FloatingLabel label={<Translator path="registration.form.labelPhone" />}>
                 <Form.Control size="lg" onChange={this.handleInputChange} name="phone" value={phone} required type="phone" placeholder="Celular" pattern="(\([0-9]{2}\))\s9([0-9]{4})-([0-9]{4})" />
               </FloatingLabel>
             </FormGroup>
@@ -154,7 +177,7 @@ class SignUpForm extends Component {
 
           <Col xs={12} sm={12} lg>
             <FormGroup className="mb-3" controlId="formPassword">
-              <FloatingLabel label="SENHA">
+              <FloatingLabel label={<Translator path="registration.form.labelPassword" />}>
                 <Form.Control minLength="6" maxLength="10" size="lg" onChange={this.handleInputChange} name="password" value={password} required type="password" placeholder="Senha" />
               </FloatingLabel>
             </FormGroup>
@@ -162,7 +185,7 @@ class SignUpForm extends Component {
 
           <Col xs={12} sm={12} lg>
             <FormGroup className="mb-3" controlId="formConfirmPassword">
-              <FloatingLabel label="CONFIRME SENHA">
+              <FloatingLabel label={<Translator path="registration.form.labelConfirmPassword" />}>
                 <Form.Control minLength="6" maxLength="10" size="lg" onChange={this.handleInputChange} name="password2" value={password2} required type="password" placeholder="Confirme Senha" />
               </FloatingLabel>
             </FormGroup>
@@ -176,16 +199,16 @@ class SignUpForm extends Component {
                 name="accepted"
                 value={accepted}
                 required
-                label="Eu concordo com os termos e condições da Política de Privacidade."
+                label={<Translator path="registration.form.labelAccept" />}
               />
             </FormGroup>
           </Col>
         </Row>
 
         <Row>
-          <div className="d-flex justify-content-center col-12">
+          <div className="d-flex justify-content-center col-12 mt-3">
             <Button variant="outline-dark" type="submit">
-              Gerar Boleto.
+              <Translator path="registration.form.btnBill" />
             </Button>
           </div>
         </Row>

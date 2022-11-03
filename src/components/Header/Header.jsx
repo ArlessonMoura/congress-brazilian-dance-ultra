@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import Translator from '../../assets/i18n/Translator';
 import SignInModal from '../SignInModal/SignInModal';
 import './style.scss';
 
@@ -22,10 +23,18 @@ class Header extends Component {
       <>
         <header className="d-flex justify-content-center">
           <nav className="col-8 menu-anchor">
-            <Button variant="outline-dark" size="lg" href="#section-one">Início</Button>
-            <Button variant="outline-dark" size="lg" href="#section-two">Nossa História</Button>
-            <Button variant="outline-dark" size="lg" href="#section-three">Forró do Ultra!</Button>
-            <Button variant="outline-dark" size="lg" href="#section-four">Inscrições</Button>
+            <Button variant="outline-dark" size="lg" href="#section-one">
+              <Translator path="header.btnHome" />
+            </Button>
+            <Button variant="outline-dark" size="lg" href="#section-two">
+              <Translator path="header.btnStory" />
+            </Button>
+            <Button variant="outline-dark" size="lg" href="#section-three">
+              <Translator path="header.btnCongress" />
+            </Button>
+            <Button variant="outline-dark" size="lg" href="#section-four">
+              <Translator path="header.btnRegistration" />
+            </Button>
             <Button variant="outline-dark" size="lg" onClick={() => this.showModal(true)}>
               <i className="bi bi-person-circle" />
             </Button>

@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import whatsappIcon from '../../assets/images/whatsapp.png';
 import facebookIcon from '../../assets/images/facebook.png';
 import './style.scss';
+import Translator from '../../assets/i18n/Translator';
 
 class ShareModal extends Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class ShareModal extends Component {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Compartilhe o &#39;Forró do Ultra &trade;&#39;!!!</Modal.Title>
+          <Modal.Title>
+            <Translator path="modalShare.title" />
+          </Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -56,7 +59,7 @@ class ShareModal extends Component {
                 <CopyToClipboard text={url} onCopy={() => alert('Endereço do site copiado com sucesso!')}>
                   <InputGroup.Text onClick={this.copyURL}>
                     <Button variant="light">
-                      Copiar
+                      <Translator path="modalShare.btnCopy" />
                     </Button>
                   </InputGroup.Text>
                 </CopyToClipboard>

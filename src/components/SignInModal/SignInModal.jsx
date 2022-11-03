@@ -5,53 +5,39 @@ import {
 import Modal from 'react-bootstrap/Modal';
 import PropTypes from 'prop-types';
 import './style.scss';
+import Translator from '../../assets/i18n/Translator';
 
 class SignInModal extends Component {
   constructor() {
     super();
     this.state = {
-      cpf: '',
+      email: '',
       password: '',
     };
     this.handleInput = this.handleInput.bind(this);
-    this.checkId = this.checkId.bind(this);
+    // this.checkId = this.checkId.bind(this);
   }
 
   handleInput(event) {
     const { name, value } = event.target;
-
-    switch (name) {
-      case 'cpf':
-        this.setState({
-          [name]: value.replace(/\D/g, '')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
-            .replace(/(-\d{2})\d+?$/, '$1'),
-        });
-        break;
-
-      default:
-        this.setState({
-          [name]: value,
-        });
-        break;
-    }
+    this.setState({
+      [name]: value,
+    });
   }
 
-  checkId() {
+  // checkId() {
 
-  }
+  // }
 
   signIn() {
-    const { cpf, password } = this.state;
+    const { email, password } = this.state;
     return (
       <Form onSubmit={this.checkId} action="/signin" method="post">
         <Row>
           <Col>
             <FormGroup className="mb-3" controlId="formCPF">
-              <FloatingLabel label="CPF">
-                <Form.Control onChange={this.handleInput} name="cpf" value={cpf} required type="text" placeholder="CPF" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" />
+              <FloatingLabel label={<Translator path="modalSignin.labelEmail" />}>
+                <Form.Control maxLength="50" size="lg" onChange={this.handleInput} name="email" value={email} required type="email" placeholder="e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
               </FloatingLabel>
             </FormGroup>
           </Col>
@@ -60,7 +46,7 @@ class SignInModal extends Component {
         <Row>
           <Col>
             <FormGroup className="mb-3" controlId="formPassword">
-              <FloatingLabel label="SENHA">
+              <FloatingLabel label={<Translator path="modalSignin.labelPassword" />}>
                 <Form.Control minLength="6" maxLength="10" onChange={this.handleInput} name="password" value={password} required type="password" placeholder="Senha" />
               </FloatingLabel>
             </FormGroup>
@@ -70,7 +56,7 @@ class SignInModal extends Component {
         <Row>
           <div className="d-flex justify-content-center col-12">
             <Button variant="outline-dark" type="submit">
-              Sign-in
+              <Translator path="modalSignin.btnSignin" />
             </Button>
           </div>
         </Row>
@@ -88,7 +74,9 @@ class SignInModal extends Component {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>Cartão Inscrição</Modal.Title>
+          <Modal.Title>
+            <Translator path="modalSignin.titleSignin" />
+          </Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -97,8 +85,7 @@ class SignInModal extends Component {
 
         <Modal.Footer>
           <p>
-            Aqui você pode acessar segunda via de Boleto
-            (que também é seu cartão de inscrição), e alterar dados cadastrais.
+            <Translator path="modalSignin.footerSignin" />
           </p>
         </Modal.Footer>
       </Modal>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import Translator from '../../assets/i18n/Translator';
 import wtp from '../../assets/images/wtp.png';
 import attraction1 from '../../assets/images/attraction1.png';
 import attraction2 from '../../assets/images/attraction2.png';
@@ -16,7 +17,9 @@ function Attractions() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h2 className="name">Quais serão os professores e competidores desse ano?</h2>
+          <h2 className="name">
+            <Translator path="congress.tabAttractions.slide1Subs.text1" />
+          </h2>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -28,8 +31,12 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2 className="name">Celio Rocha</h2>
-          <h3>Aqui, é claro que é presença garantida!</h3>
+          <h2 className="name">
+            <Translator path="congress.tabAttractions.slide2Subs.text1" />
+          </h2>
+          <h3>
+            <Translator path="congress.tabAttractions.slide2Subs.text2" />
+          </h3>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -41,9 +48,11 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2 className="name">Fábia & Erisson</h2>
+          <h2 className="name">
+            <Translator path="congress.tabAttractions.slide3Subs.text1" />
+          </h2>
           <h3>
-            Também são presença mais que garantida!
+            <Translator path="congress.tabAttractions.slide3Subs.text2" />
           </h3>
         </Carousel.Caption>
       </Carousel.Item>
@@ -56,9 +65,11 @@ function Attractions() {
         />
 
         <Carousel.Caption>
-          <h2 className="name">Erica & Witheney</h2>
+          <h2 className="name">
+            <Translator path="congress.tabAttractions.slide4Subs.text1" />
+          </h2>
           <h3>
-            E esse casal fenomenal, será que virão para tentar o Bi-campeonato?
+            <Translator path="congress.tabAttractions.slide4Subs.text2" />
           </h3>
         </Carousel.Caption>
       </Carousel.Item>
