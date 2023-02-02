@@ -1,5 +1,5 @@
 .map {
-  height: 58vh;  
+  height: 54vh;  
 }
 
 .map>iframe {
@@ -8,7 +8,8 @@
 }
 
 .route-icons {
-  height: 25vh;
+  min-height: 10vh;
+  max-height: 25vh;
   display: flex;
   align-content: center;
   justify-content: space-evenly;

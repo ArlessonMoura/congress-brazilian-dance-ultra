@@ -22,6 +22,7 @@ class SignUpForm extends Component {
       privacyPolice: false,
       ageAlert: false,
       passwordAlert: false,
+      foreign: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.rulesModal = this.rulesModal.bind(this);
@@ -105,29 +106,49 @@ class SignUpForm extends Component {
     const {
       name, cpf, birth, email, phone, password,
       password2, accepted, privacyPolice,
-      ageAlert, passwordAlert,
+      ageAlert, passwordAlert, foreign,
     } = this.state;
 
     return (
-      <Form onSubmit={this.checkPassword} action="/signup" method="post">
+      <Form onSubmit={this.checkPassword}>
 
-        <Modal show={passwordAlert} onHide={() => this.setState({ passwordAlert: false })}>
+        <Modal
+          show={passwordAlert}
+          onHide={() => this.setState({ passwordAlert: false })}
+        >
           <Modal.Body>
             <Translator path="registration.form.passwordAlert" />
           </Modal.Body>
         </Modal>
 
-        <Button
-          variant="Link"
-          size="sm"
-          onClick={() => this.rulesModal(true)}
-        >
-          <i className="bi bi-info-circle-fill">
-            <Translator path="registration.form.btnPrivacy" />
-          </i>
-        </Button>
+        <ModalLGPD rulesModal={this.rulesModal} privacyPolice={privacyPolice} />
+
         <Row>
-          <FormGroup className="mb-3" controlId="formName">
+          <Col>
+            <Button
+              variant="Link"
+              size="sm"
+              onClick={() => this.rulesModal(true)}
+            >
+              <i className="bi bi-info-circle-fill">
+                <Translator path="registration.form.btnPrivacy" />
+              </i>
+            </Button>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Form.Check
+                onChange={this.handleInputChange}
+                name="foreign"
+                checked={foreign}
+                label={<Translator path="registration.form.foreign" />}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row>
+          <FormGroup className="mb-5 mb-lg-3" controlId="formName">
             <FloatingLabel label={<Translator path="registration.form.labelName" />}>
               <Form.Control maxLength="50" size="lg" onChange={this.handleInputChange} name="name" value={name} required type="text" placeholder="nome completo" />
             </FloatingLabel>
@@ -136,9 +157,19 @@ class SignUpForm extends Component {
 
         <Row>
           <Col xs={12} sm={12} lg>
-            <FormGroup className="mb-3" controlId="formCPF">
+            <FormGroup className="mb-5 mb-lg-3" controlId="formCPF">
               <FloatingLabel label={<Translator path="registration.form.labelCPF" />}>
-                <Form.Control size="lg" onChange={this.handleInputChange} name="cpf" value={cpf} required type="text" placeholder="CPF" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" />
+                <Form.Control
+                  disabled={foreign}
+                  size="lg"
+                  onChange={this.handleInputChange}
+                  name="cpf"
+                  value={cpf}
+                  required
+                  type="text"
+                  placeholder="CPF"
+                  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                />
               </FloatingLabel>
             </FormGroup>
           </Col>
@@ -150,7 +181,7 @@ class SignUpForm extends Component {
           </Modal>
 
           <Col xs={12} sm={12} lg>
-            <FormGroup className="mb-3" controlId="formBirth">
+            <FormGroup className="mb-5 mb-lg-3" controlId="formBirth">
               <FloatingLabel label={<Translator path="registration.form.labelBirth" />}>
                 <Form.Control size="lg" onChange={this.handleInputChange} name="birth" value={birth} required type="date" placeholder="Data de Nascimento" onBlur={this.teenageVerify} />
               </FloatingLabel>
@@ -159,7 +190,7 @@ class SignUpForm extends Component {
         </Row>
 
         <Row>
-          <FormGroup className="mb-3" controlId="formEmail">
+          <FormGroup className="mb-5 mb-lg-3" controlId="formEmail">
             <FloatingLabel label={<Translator path="registration.form.labelEmail" />}>
               <Form.Control maxLength="50" size="lg" onChange={this.handleInputChange} name="email" value={email} required type="email" placeholder="e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
             </FloatingLabel>
@@ -168,7 +199,7 @@ class SignUpForm extends Component {
 
         <Row>
           <Col xs={12} sm={12} lg>
-            <FormGroup noValidate className="mb-3" controlId="formPhone">
+            <FormGroup noValidate className="mb-5 mb-lg-3" controlId="formPhone">
               <FloatingLabel label={<Translator path="registration.form.labelPhone" />}>
                 <Form.Control size="lg" onChange={this.handleInputChange} name="phone" value={phone} required type="phone" placeholder="Celular" pattern="(\([0-9]{2}\))\s9([0-9]{4})-([0-9]{4})" />
               </FloatingLabel>
@@ -176,7 +207,7 @@ class SignUpForm extends Component {
           </Col>
 
           <Col xs={12} sm={12} lg>
-            <FormGroup className="mb-3" controlId="formPassword">
+            <FormGroup className="mb-5 mb-lg-3" controlId="formPassword">
               <FloatingLabel label={<Translator path="registration.form.labelPassword" />}>
                 <Form.Control minLength="6" maxLength="10" size="lg" onChange={this.handleInputChange} name="password" value={password} required type="password" placeholder="Senha" />
               </FloatingLabel>
@@ -184,7 +215,7 @@ class SignUpForm extends Component {
           </Col>
 
           <Col xs={12} sm={12} lg>
-            <FormGroup className="mb-3" controlId="formConfirmPassword">
+            <FormGroup className="mb-5 mb-lg-3" controlId="formConfirmPassword">
               <FloatingLabel label={<Translator path="registration.form.labelConfirmPassword" />}>
                 <Form.Control minLength="6" maxLength="10" size="lg" onChange={this.handleInputChange} name="password2" value={password2} required type="password" placeholder="Confirme Senha" />
               </FloatingLabel>
@@ -196,8 +227,9 @@ class SignUpForm extends Component {
           <Col>
             <FormGroup>
               <Form.Check
+                onChange={this.handleInputChange}
                 name="accepted"
-                value={accepted}
+                checked={accepted}
                 required
                 label={<Translator path="registration.form.labelAccept" />}
               />
@@ -206,13 +238,12 @@ class SignUpForm extends Component {
         </Row>
 
         <Row>
-          <div className="d-flex justify-content-center col-12 mt-3">
+          <div className="d-flex justify-content-center col-12 mt-5 mt-lg-3">
             <Button variant="outline-dark" type="submit">
               <Translator path="registration.form.btnBill" />
             </Button>
           </div>
         </Row>
-        <ModalLGPD rulesModal={this.rulesModal} privacyPolice={privacyPolice} />
       </Form>
     );
   }

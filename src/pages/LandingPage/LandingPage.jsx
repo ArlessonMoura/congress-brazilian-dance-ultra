@@ -23,6 +23,7 @@ import instagramIcon from '../../assets/images/instagram.png';
 import facebookIcon from '../../assets/images/facebook.png';
 import shareIcon from '../../assets/images/share.png';
 import promo from '../../assets/images/blindPass.jpeg';
+import Forward from '../../components/Forward/Forward';
 import './style.scss';
 
 class LandingPage extends Component {
@@ -79,6 +80,8 @@ class LandingPage extends Component {
                     </p>
                   </div>
                 </Fade>
+
+                <Forward />
               </div>
 
               <div className="d-flex flex-row-reverse align-items-start col-2">
@@ -105,7 +108,7 @@ class LandingPage extends Component {
               </div>
             </section>
 
-            <section className="d-flex main-splits" id="section-three">
+            <section className="d-flex flex-column justify-content-center align-items-center flex-lg-row main-splits" id="section-three">
 
               <div className="d-flex align-items-center col-2">
                 <img className="corners" src={smallIconL} alt="left-top-corner" />
@@ -113,7 +116,7 @@ class LandingPage extends Component {
 
               <div className="d-flex flex-column align-content-center justify-content-center col-8">
                 <Tabs
-                  className="mb-3"
+                  className="mt-5 mt-lg-0"
                   defaultActiveKey="attractions"
                   justify
                 >
@@ -147,36 +150,42 @@ class LandingPage extends Component {
                 </Row>
 
                 <Row>
-                  <h2 className="call-us">
-                    <Translator path="registration.webSocial" />
-                  </h2>
-                  <div className="col-8 call-icons">
-                    <a
-                      href="https://api.whatsapp.com/send?phone=5581996694649&text=Ol%C3%A1%2C%20estou%20interessado%20em%20me%20inscrever%20no%20%22Forr%C3%B3%20do%20Ultra%22!!!"
-                      target="_blank"
-                      rel="external noreferrer"
-                    >
-                      <input className="contact-icons" type="image" src={whatsappIcon} alt="whatsapp-icon" />
-                    </a>
+                  <div className="col-12 col-lg-6 call">
+                    <h2 className="call-us">
+                      <Translator path="registration.webSocial" />
+                    </h2>
+                    <div>
+                      <a
+                        href="https://api.whatsapp.com/send?phone=5581996694649&text=Ol%C3%A1%2C%20estou%20interessado%20em%20me%20inscrever%20no%20%22Forr%C3%B3%20do%20Ultra%22!!!"
+                        target="_blank"
+                        rel="external noreferrer"
+                      >
+                        <input className="contact-icons" type="image" src={whatsappIcon} alt="whatsapp-icon" />
+                      </a>
 
-                    <a href="https://www.instagram.com/ultract/" target="_blank" rel="external noreferrer">
-                      <input className="contact-icons" type="image" src={instagramIcon} alt="instagram-icon" />
-                    </a>
+                      <a href="https://www.instagram.com/ultract/" target="_blank" rel="external noreferrer">
+                        <input className="contact-icons" type="image" src={instagramIcon} alt="instagram-icon" />
+                      </a>
 
-                    <a href="https://web.facebook.com/UltraCTBR" target="_blank" rel="external noreferrer">
-                      <input className="contact-icons" type="image" src={facebookIcon} alt="facebook-icon" />
-                    </a>
-
+                      <a href="https://web.facebook.com/UltraCTBR" target="_blank" rel="external noreferrer">
+                        <input className="contact-icons" type="image" src={facebookIcon} alt="facebook-icon" />
+                      </a>
+                    </div>
                   </div>
 
-                  <div className="col-4 share-icons">
-                    <input
-                      className="contact-icons"
-                      onClick={() => this.showShareModal(true)}
-                      type="image"
-                      src={shareIcon}
-                      alt="share-icon"
-                    />
+                  <div className="col-12 col-lg-6 share-us mt-5 mt-lg-0">
+                    <h2 className="call-us">
+                      <Translator path="registration.webShare" />
+                    </h2>
+                    <div>
+                      <input
+                        className="contact-icons"
+                        onClick={() => this.showShareModal(true)}
+                        type="image"
+                        src={shareIcon}
+                        alt="share-icon"
+                      />
+                    </div>
                   </div>
                 </Row>
                 <ShareModal

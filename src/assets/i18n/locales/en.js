@@ -55,6 +55,7 @@ export default {
     registration: {
       form: {
         btnPrivacy: 'Privacy Policy',
+        foreign: 'Não tenho CPF',
         labelName: 'Name',
         labelCPF: 'CPF',
         labelBirth: 'Birth',
@@ -68,7 +69,8 @@ export default {
         passwordAlert: 'Your password does not match; The "Password" and "Confirm Password" fields must be the same.',
       },
 
-      webSocial: 'Talk with us, and share Forró do Ultra!',
+      webSocial: 'Fale conosco',
+      webShare: 'Compartilhe o Forró do Ultra!',
     },
 
     modalPrivacy: {

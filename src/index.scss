@@ -23,3 +23,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+// @include media-breakpoint-down(lg) {
+//   *,
+//   *::after,
+//   *::before {
+//     font-size: 1.4vw;
+//   }
+// }

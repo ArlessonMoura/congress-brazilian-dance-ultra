@@ -56,6 +56,7 @@ export default {
     registration: {
       form: {
         btnPrivacy: 'LGPD',
+        foreign: 'Não tenho CPF',
         labelName: 'Nome',
         labelCPF: 'CPF',
         labelBirth: 'Data de nascimento',
@@ -69,7 +70,8 @@ export default {
         passwordAlert: 'Sua senha não confere; Os campos de "Senha" e "Confirme Senha" devem ser iguais.',
       },
 
-      webSocial: 'Fale conosco, e compartilhe o Forró do Ultra!',
+      webSocial: 'Fale conosco.',
+      webShare: 'Compartilhe com amigos!',
     },
 
     modalPrivacy: {
